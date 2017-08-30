@@ -1,0 +1,39 @@
+﻿Attribut				Beschreibung
+----------------------------------------------------------------------------------------------------------
+Column					Legt Details zur Spalte fest, wie Name, Typ oder Reihenfolge.
+ForeignKey				Legt den Namen des zu einer Navigationseigenschaft gehörigen
+						Fremdschlüsselmappings fest, wenn es auf eine Navigationseigenschaft angewendet
+						wird. Wird dieses Attribut hingegen auf ein Fremdschlüsselmapping angewendet, legt
+						es den Namen der dazugehörigen Navigationseigenschaft fest.
+InverseProperty 		Legt bei bidirektionalen Assoziationen den Namen der Eigenschaft auf der anderen
+						Seite fest.
+Key						Definiert die Eigenschaft als Primärschlüssel.
+MaxLength				Legt die maximale Länge fest.
+NotMapped				Legt fest, dass das annotierte Feld nicht gemappt werden soll.
+Required				Definiert die Eigenschaft als not null.
+Table					Legt den Namen der Tabelle sowie optional den Namen des zu verwendenden
+						Schemas fest.
+
+System.ComponentModel.DataAnnotations
+ValidationAttribute
+var validationResults = ctx.GetValidationErrors();
+LogErrors(validationResults);
+						
+Required				Validierung, ob Wert nicht leer oder null ist
+Range					Validierung, ob Zahl in einem bestimmten Wertebereich liegt. Erlaubt ist die
+						Angabe als int- oder double-Zahl
+StringLength			Validierung, ob Zeichenkette eine bestimmte Maximallänge hat und optional
+						auch eine bestimmte Mindestlänge
+RegularExpression		Validierung, ob Wert einem regulären Ausdruck entspricht
+UrlAttribute			Validierung, ob Wert eine URL ist
+PhoneAttribute			Validierung, ob Wert eine Telefonnummer ist
+MinLengthAttribute		Validierung, ob Wert eine Mindestlänge erfüllt
+MaxLengthAttribute		Validierung, ob Wert eine Maximallänge erfüllt
+FileExtensionsAttribute	Validierung, ob Wert ein Dateiname mit bestimmten Dateinamenserweiterung ist
+EmailAddressAttribute	Validierung, ob Wert eine E-Mail-Adresse ist
+CreditCardAttribute		Validierung, ob Wert eine Kreditkartennummer ist
+CompareAttribute		Validierung, ob ein Wert einem anderen entspricht
+
+PathAttribute			Check if is Dateipfad
+MinValue			Sascha weiß bescheid
+MaxValue			Sascha weiß bescheid

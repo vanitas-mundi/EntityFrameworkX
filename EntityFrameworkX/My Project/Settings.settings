@@ -1,0 +1,83 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="ModelTemplate" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Option Explicit On
+Option Infer On
+Option Strict On
+
+#Region " ---------------&gt;&gt; Imports/ usings "
+Imports SSP.Data.EntityFrameworkX.Models.Core
+Imports SSP.Data.EntityFrameworkX.Models.Core.Interfaces
+#End Region
+
+Namespace Models&lt;Namespace&gt;
+
+	Partial Public Class &lt;ModelName&gt;
+
+		Implements IModelBase(Of &lt;ModelName&gt;, PropertyNames)
+
+#Region " ---------------&gt;&gt; Enumerationen der Klasse "
+		Public Enum PropertyNames
+			RowId
+&lt;PropertyNames&gt;
+		End Enum
+#End Region	'{Enumerationen der Klasse}
+
+#Region " ---------------&gt;&gt; Eigenschaften der Klasse "
+		Private Shared _modelBase As ModelBase(Of &lt;ModelName&gt;, PropertyNames)
+#End Region	'{Eigenschaften der Klasse}
+
+#Region " ---------------&gt;&gt; Konstruktor und Destruktor der Klasse "
+		Shared Sub New()
+			_modelBase= New ModelBase(Of &lt;ModelName&gt;, PropertyNames)("&lt;TableName&gt;")
+			_modelBase.AddMappingInformation(PropertyNames.RowId, My.Settings.RowIdName)
+&lt;MappingInformations&gt;			
+		End Sub
+#End Region	'{Konstruktor und Destruktor der Klasse}
+
+#Region " ---------------&gt;&gt; Zugriffsmethoden der Klasse "
+		&lt;DatabaseGenerated(DatabaseGeneratedOption.Computed)&gt;
+		Public Property RowId As Long Implements IModelBase(Of &lt;ModelName&gt;, PropertyNames).RowId		
+&lt;Properties&gt;
+#End Region	'{Zugriffsmethoden der Klasse}
+
+#Region " ---------------&gt;&gt; Ereignismethoden Methoden der Klasse "
+#End Region	'{Ereignismethoden der Klasse}
+
+#Region " ---------------&gt;&gt; Private Methoden der Klasse "
+#End Region	'{Private Methoden der Klasse}
+
+#Region " ---------------&gt;&gt; Öffentliche Methoden der Klasse "
+		Public Shared Function GetModelBase() As ModelBase(Of &lt;ModelName&gt;, PropertyNames)
+			Return _modelBase
+		End Function
+
+		Public Function ModelBase() As ModelBase(Of &lt;ModelName&gt;, PropertyNames) Implements IModelBase(Of &lt;ModelName&gt;, PropertyNames).ModelBase
+			Return _modelBase
+		End Function
+
+		Public Overrides Function ToString() As String
+			Return MyBase.ToString
+		End Function
+#End Region	'{Öffentliche Methoden der Klasse}
+
+	End Class
+
+End Namespace</Value>
+    </Setting>
+    <Setting Name="RowIdName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">_rowid</Value>
+    </Setting>
+    <Setting Name="SetLocalization" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CALL def.SetLocalization('{0}', '{1}', '{2}', {3}, '{4}', '{5}')</Value>
+    </Setting>
+    <Setting Name="DeleteLocalization" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CALL def.DeleteLocalization('{0}', '{1}', '{2}', {3}, '{4}')</Value>
+    </Setting>
+    <Setting Name="OfficialEmailName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">E-Mail (dienstlich)</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

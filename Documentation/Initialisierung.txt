@@ -1,0 +1,18 @@
+  Sub Main()
+
+    Dim cs = "host=sql01;uid=apps;pwd=bcw;unicode=true;"
+
+    ContextManager.Instance.Initialize _
+    (New MySqlEntityProviderServicesConfiguration _
+    , New MySqlConnection(cs), 1)
+
+    Dim monitor = New MySqlMonitor() With {.IsActive = True, .UseApp = True}
+
+
+    Dim p = MasterDataRepository.Instance.PersonsRepository.GetById(27)
+
+    Console.WriteLine(p.ToString)
+
+    Console.WriteLine("<Press any Key>")
+    Console.ReadKey(True)
+  End Sub
